@@ -20,7 +20,7 @@ cat = {"fysik": "phy",
 
 
 # TODO 10p programmet skall ge en hjälpsam utskrift istället för en krasch om användaren skriver in fel input
-# TODO 15p om användaren inte anger ett område som exempelvis fysik eller kemi så skall den parametern inte skickas med till apiet och vi får då alla priser det året
+# 15p om användaren inte anger ett område som exempelvis fysik eller kemi så skall den parametern inte skickas med till apiet och vi får då alla priser det året
 
 
 
@@ -45,11 +45,15 @@ def main():
             print(HELP_STRING)
             continue
 
-        a, b = aaa.split()
-        c = cat[b]
+        ln = len(aaa.split())
 
+        if ln == 2:
+            a, b = aaa.split()
+            c = cat[b]
+            c = {"nobelPrizeYear": int(a), "nobelPrizeCategory": c}
 
-        c = {"nobelPrizeYear": int(a),"nobelPrizeCategory":c}
+        if ln == 1:
+            c = {"nobelPrizeYear": int(aaa)}
 
         res = requests.get("http://api.nobelprize.org/2.1/nobelPrizes", params=c).json()
         # TODO 5p  Lägg till någon typ av avskiljare mellan pristagare, exempelvis --------------------------
