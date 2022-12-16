@@ -56,7 +56,7 @@ def main():
             c = {"nobelPrizeYear": int(aaa)}
 
         res = requests.get("http://api.nobelprize.org/2.1/nobelPrizes", params=c).json()
-        # TODO 5p  Lägg till någon typ av avskiljare mellan pristagare, exempelvis --------------------------
+        # 5p Lägg till någon typ av avskiljare mellan pristagare, exempelvis --------------------------
 
         # TODO 20p Skriv ut hur mycket pengar varje pristagare fick, tänk på att en del priser delas mellan flera mottagare, skriv ut både i dåtidens pengar och dagens värde
         #   Skriv ut med tre decimalers precision. exempel 534515.123
@@ -67,7 +67,7 @@ def main():
         for p in res["nobelPrizes"]:
             peng = p["prizeAmount"]
             idagpeng = p["prizeAmountAdjusted"]
-            print(f"{p['categoryFullName']['se']} prissumma {peng} SEK")
+            print(f"{p['categoryFullName']['se']} \n -------------------------- \n prissumma {peng} SEK")
 
             for m in p["laureates"]:
                 print(m['knownName']['en'])
