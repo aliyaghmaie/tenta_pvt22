@@ -7,6 +7,7 @@ import requests
 HELP_STRING = """
 Ange ett år och fält
 Exempelvis 1965 fysik/kemi/litteratur/ekonomi/fred/medicin
+För att avsluta enter Q
 """
 
 cat = {"fysik": "phy",
@@ -30,13 +31,20 @@ def main():
 
     while True:
 
-        #   5p Skriv bara ut hjälptexten en gång när programmet startar inte efter varje gång användaren matat in en fråga
+        #  5p Skriv bara ut hjälptexten en gång när programmet startar inte efter varje gång användaren matat in en fråga
         #      Förbättra hjälputskriften så att användaren vet vilka fält, exempelvis kemi som finns att välja på
 
-        # TODO 5p Gör så att det finns ett sätt att avsluta programmet, om användaren skriver Q så skall programmet stängas av
+        #  5p Gör så att det finns ett sätt att avsluta programmet, om användaren skriver Q så skall programmet stängas av
         #      Beskriv i hjälptexten hur man avslutar programmet
-        # TODO 5p Gör så att hjälptexten skrivs ut om användaren skriver h eller H
+        #  5p Gör så att hjälptexten skrivs ut om användaren skriver h eller H
         aaa = input(">")
+        if aaa == "Q":
+            exit(0)
+
+        if aaa == "h" or aaa == "H":
+            print(HELP_STRING)
+            continue
+
         a, b = aaa.split()
         c = cat[b]
 
