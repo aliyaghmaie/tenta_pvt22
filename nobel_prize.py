@@ -19,7 +19,7 @@ cat = {"fysik": "phy",
 
 
 
-# TODO 10p programmet skall ge en hjälpsam utskrift istället för en krasch om användaren skriver in fel input
+# 10p programmet skall ge en hjälpsam utskrift istället för en krasch om användaren skriver in fel input
 # 15p om användaren inte anger ett område som exempelvis fysik eller kemi så skall den parametern inte skickas med till apiet och vi får då alla priser det året
 
 
