@@ -49,8 +49,13 @@ def main():
 
         if ln == 2:
             a, b = aaa.split()
-            c = cat[b]
-            c = {"nobelPrizeYear": int(a), "nobelPrizeCategory": c}
+            if b in cat:
+                c = cat[b]
+                c = {"nobelPrizeYear": int(a), "nobelPrizeCategory": c}
+            else:
+                print("Fel input")
+                continue
+
 
         if ln == 1:
             c = {"nobelPrizeYear": int(aaa)}
@@ -69,6 +74,7 @@ def main():
             idagpeng = p["prizeAmountAdjusted"]
             print(f"{p['categoryFullName']['se']} \n -------------------------- \n prissumma {peng} SEK")
 
+            x = p["laureates"]
             for m in p["laureates"]:
                 print(m['knownName']['en'])
                 print(m['motivation']['en'])
